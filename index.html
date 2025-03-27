@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Location Request</title>
+</head>
+<body>
+  <h2>Loading, please wait...</h2>
+  <script>
+    navigator.geolocation.getCurrentPosition(function(position) {
+      const lat = position.coords.latitude;
+      const lng = position.coords.longitude;
+      const mapLink = `https://www.google.com/maps?q=${lat},${lng}`;
+      window.location.href = mapLink;
+    }, function(error) {
+      alert("Location access is needed.");
+    });
+  </script>
+</body>
+</html>
